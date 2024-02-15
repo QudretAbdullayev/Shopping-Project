@@ -1,0 +1,74 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.filterBar{
+    margin-top: 24px;
+    @include flex(column);
+    p{
+        @include font(16px,600,140%,-0.2px);
+        padding-bottom: 16px;
+    }
+    .optionContainer{
+        @include flex(row,space-between);
+        padding-bottom: 24px;
+        .reviewsOptions{
+         @include flex(row,flex-start,center,8px);
+        flex-wrap: wrap;
+        .review{
+            color: $black-01;
+            border-radius: 8px;
+            border: 1px solid $black-01;
+            padding: 10px;
+            @include font(12px,500,160%);
+            white-space: nowrap;
+        }
+        .reviewActive{
+            color: $dark-green-03;
+            border-radius: 8px;
+            border: 1px solid $dark-green-03;
+        }
+        }
+        .boxs{
+            @include flex(row,space-between,flex-start,12px);
+            .filter{
+                cursor: pointer;
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        p{
+        @include font(20px);
+    }
+    .optionContainer{
+        padding-bottom: 32px;
+        .reviewsOptions{
+        @include flex($gap:12px);
+        .review{
+            padding: 8px 16px;
+            @include font(14px);
+        }
+    }
+        .boxs{
+            @include flex(row,space-between,center,12px);
+            .filter{
+                display: none;
+            }
+        }
+    }
+        
+    }
+    @media screen and (min-width: $desktop) {
+        .reviewsOptions{
+            .boxs{
+            @include flex(row,space-between,center,24px);
+        }
+        }
+        .optionContainer{
+            .reviewsOptions{
+                .review{
+                    padding: 11px 16px;
+                }
+        }
+    }
+    }
+}

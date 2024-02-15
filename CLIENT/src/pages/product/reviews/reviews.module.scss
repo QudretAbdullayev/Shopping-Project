@@ -1,0 +1,202 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.reviewsSection {
+  padding-bottom: 32px;
+  .reviewsContainer {
+    padding-bottom: 32px;
+    .title {
+      padding: 24px 0 16px 0;
+      width: 80%;
+      color: $black-01;
+      @include font(16px, 600, 140%, -0.2px);
+    }
+    .reviews {
+      border-radius: 12px;
+      border: 1px solid $d-grey-01;
+      padding: 16px;
+      .ratingTotal {
+        margin-bottom: 24px;
+        @include flex(row, flex-start, center, 16px);
+        .ratingTotalDescribe {
+          @include flex(column);
+          .stars {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          p {
+            color: $black-01;
+            @include font(12px, 500, 160%);
+          }
+        }
+      }
+      .ratings {
+        @include flex(column);
+        .ratingBox {
+          @include flex(row, space-between, center, 12px);
+          width: 100%;
+          .ratingArea {
+            @include flex(row, space-between, center);
+            .rating {
+              width: 24px;
+              color: $black-01;
+              @include font(12px, 500, 160%);
+            }
+            .star {
+              object-fit: contain;
+              width: 16px;
+            }
+          }
+          progress {
+            border-radius: 8px;
+            width: 100%;
+            height: 8px;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+          }
+          progress::-webkit-progress-bar {
+            background-color: $d-grey-01;
+            border-radius: 8px;
+          }
+          progress::-webkit-progress-value {
+            background-color: $dark-green-03;
+            border-radius: 8px;
+          }
+          .ratingPoint {
+            color: $black-01;
+            text-align: right;
+            @include font(12px, 500, 160%);
+            width: 39px;
+          }
+        }
+      }
+    }
+  }
+  .productsContainer {
+    @include flex(column, center, center);
+    .reviewList {
+      width: 100%;
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #e4e9ee;
+        margin: 24px 0;
+        &:nth-last-child(1) {
+          display: none;
+        }
+      }
+    }
+    .filterOption {
+      position: absolute;
+      min-height: 100vh;
+      width: 100%;
+      z-index: 10;
+      background-color: $white-general;
+      top: -60px;
+    }
+    .filterActive {
+      display: block;
+    }
+    .filterDeactive {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $ipad) {
+    padding-bottom: 52px;
+    .reviewsContainer {
+      .title {
+        width: 75%;
+        @include font(20px);
+      }
+      .reviews {
+        padding: 24px;
+        @include flex(row, space-between, flex-start, 42px);
+        width: 100%;
+        .ratings {
+          width: 68%;
+          .ratingBox {
+            .ratingArea {
+              .rating {
+                @include font(14px);
+              }
+              .star {
+                width: 20px;
+              }
+            }
+            .ratingPoint {
+              @include font(14px);
+              text-align: left;
+            }
+          }
+        }
+        .ratingTotal {
+          @include flex(row, flex-start, center, 16px);
+          .ratingTotalDescribe {
+            @include flex(column, $gap: 8px);
+            .stars {
+              img {
+                width: 20px;
+                height: 20px;
+              }
+            }
+            p {
+              @include font(14px);
+            }
+          }
+        }
+      }
+    }
+    .productsContainer {
+      @include flex(row, flex-start, flex-start, 32px);
+      .filterOption {
+        border-radius: 12px;
+        outline: 1px solid $d-grey-01;
+        background: $white-general;
+        position: static;
+        min-height: inherit;
+        width: 30%;
+        z-index: 0;
+        background-color: transparent;
+        top: 0;
+      }
+      .filterActive {
+        display: block;
+      }
+      .filterDeactive {
+        display: block;
+      }
+      .productsBox {
+        width: 100%;
+        @include flex(column, center, space-between);
+        height: 100%;
+        .products {
+          padding: 0px 0px 32px 0px;
+          grid-template-columns: 1fr 1fr 1fr;
+          column-gap: 17px;
+          row-gap: 24px;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    .reviewsContainer {
+      .reviews {
+        .ratingTotal {
+          .ratingTotalDescribe {
+            p {
+              @include font(16px);
+            }
+          }
+        }
+      }
+    }
+    .productsContainer {
+      .reviewList {
+        .line {
+          margin: 32px 0;
+        }
+      }
+    }
+  }
+}

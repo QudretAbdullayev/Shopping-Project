@@ -1,0 +1,12 @@
+@import './assets/style/fonts.scss';
+@import './assets/style/mixin.scss';
+@import './assets/style/variables.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Clash Grotesk, sans-serif;
+  font-style: normal;
+  list-style: none;
+  text-decoration: none;
+}

@@ -1,0 +1,98 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.filterBar{
+    padding-top: 24px;
+    @include flex(row,space-between,center);
+    .filterBox{
+        position: relative;
+        .sort,.select{
+            color: $black-01;
+            @include font(12px,500,160%);
+        }
+        .sort{
+            padding-left: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+        }
+        .select{
+            padding: 10px 0px 10px 50px;
+            border-radius: 8px;
+            border: 1px solid $d-grey-01;
+        }
+    }
+    .boxs{
+        @include flex(row,space-between,center,12px);
+        .filter{
+            cursor: pointer;
+        }
+        .design{
+            @include flex(row,space-between,center,8px);
+            .active{
+                background: $dark-green-01;
+            }
+        }
+        .box{
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid $d-grey-01;
+            @include flex(column,center,center);
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .line{
+            @include flex(column,center,center);
+            img{
+                width: 1px;
+                height: 24px;
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        padding-top: 0px;
+        @include flex(row,space-between,center,12px);
+        .filterBox{
+            position: static;
+            @include flex(row,space-between,center,12px);
+            .sort{
+                @include font(14px,400);
+                padding-left: 0px;
+                position: static;
+                top: 0;
+                transform: translateY(0);
+            }
+            .select{
+                @include font(14px);
+                padding: 11px 16px;
+            }
+        }
+        .boxs{
+            @include flex(row,space-between,center,12px);
+            .box{
+                padding: 10px;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            .filter{
+                display: none;
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        @include flex(row,space-between,center,24px);
+        .filterBox{
+            .sort{
+                @include font(16px);
+            }
+        }
+        .boxs{
+            @include flex(row,space-between,center,24px);
+        }
+    }
+}

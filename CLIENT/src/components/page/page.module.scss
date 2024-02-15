@@ -1,0 +1,32 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.container{
+    padding: 32px 0 24px 0;
+    width: $container-mobile;
+    @include flex(row,flex-start,center,8px);
+    .link{
+        color: $dark-green-03;
+        @include font(12px,500,160%);
+    }
+    img{
+        width: 12px;
+        height: 12px;
+    }
+    .link:nth-last-child(1){
+        color: $black-01;
+    }
+    @media screen and (min-width: $ipad) {
+        width: $container-ipad;
+        padding: 60px 0 32px 0;
+        .link{
+            @include font(14px);
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        width: $container-desktop;
+        .link{
+            @include font(16px);
+        }   
+    }
+}

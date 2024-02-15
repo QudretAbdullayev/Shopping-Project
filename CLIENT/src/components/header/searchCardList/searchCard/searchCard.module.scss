@@ -1,0 +1,58 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+.searchCard{
+  .paymentProductBox{
+    @include flex(row,flex-start,center);
+    .imgBox{
+        display: none;
+    }
+    .paymentTitle{
+      padding: 0 4px;
+        h4{
+            color: $black-01;
+            @include font(12px,600,140%,-0.2px);
+            padding-bottom: 4px;
+        }
+        h5{
+            display: none;
+        }
+    }
+  }
+  .paymentProductBox:hover {
+    border: 1px solid $grey-03;
+    border-radius: 8px;
+    background-color: $grey-03;
+  }
+  @media screen and (min-width: $ipad) {
+    .paymentProductBox{
+      @include flex(row,flex-start,center);
+      .imgBox{
+          margin: 0 12px 0 16px;
+          width: 80px;
+          height: 80px;
+          border-radius: 8px;
+          border: 1px solid $dark-green-03;
+          background: $l-grey-02;
+          @include flex(column,center,center);
+          img{
+              padding: 9px;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+      }
+      .paymentTitle{
+          h4{
+              @include font(16px,600,140%,-0.2px);
+              padding-bottom: 4px;
+          }
+          h5{
+              color: $dark-green-03;
+              @include font(14px,600,140%,-0.2px);
+          }
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}

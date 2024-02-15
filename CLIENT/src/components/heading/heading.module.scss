@@ -1,0 +1,46 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.heading{
+    @include flex(column,center,center);
+    .container{
+        @include flex(row,space-between,center);
+        width: 100%;
+        .title{
+            color: $black-01;
+            @include font(18px,600,140%,-0.2px);
+        }
+        .button{
+            background-color: $white-general;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid $dark-green-01;
+            color: var(--dark-green-01, #1E4C2F);
+            @include flex(column,center,center);
+            @include font(14px,600,140%,-0.2px);
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .container{
+            .title{
+                @include font(28px);
+            }
+            .button{
+                padding: 10px 16px;
+                @include font(16px);
+            }
+        }    
+    }
+    @media screen and (min-width: $desktop) {
+        .container{
+            .title{
+                @include font(38px);
+            }
+            .button{
+                @include font(18px);
+            }
+        }
+    }
+}

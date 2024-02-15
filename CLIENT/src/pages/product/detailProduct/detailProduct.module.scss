@@ -1,0 +1,177 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.detailProduct{
+    padding: 24px 0 32px 0;
+    .title{
+        width: 80%;
+        color: $black-01;
+        @include font(18px,600,140%,-0.2px);
+    }
+    .description{
+        color: $grey-01;
+        @include font(12px,400,160%);
+        padding: 8px 0 32px 0;
+    }
+    .spesifications{
+        @include flex(column,$gap:32px);
+        .spesification{
+            h4{
+                color: $black-01;
+                @include font(16px,600,140%,-0.2px);
+                padding-bottom: 16px;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                tbody{
+                    width: 100%;
+                    tr{
+                        th{
+                            padding: 11px 16px;
+                            text-align: left;
+                            color: $grey-01;
+                            @include font(14px,400,160%);
+                        }
+                        td{
+                            padding: 11px 16px;
+                            color: $black-01;
+                            @include font(14px,500,160%);
+                        }
+                    }
+                    tr:nth-child(odd){
+                        background-color: $l-grey-03;
+                    }
+                }
+            }
+        }
+        .inTheBox{
+            h4{
+                color: $black-01;
+                @include font(16px,600,140%,-0.2px);
+                padding-bottom: 16px;
+            }
+            .boxParameters{
+                @include flex(column,$gap:12px);
+                .boxParameter{
+                    @include flex(row,$gap:10px);
+                    .tick{
+                        @include flex(column,center,center);
+                        img{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    p{
+                        color: $black-01;
+                        @include font(14px,500,160%);
+                    }
+                }
+            }
+        }
+        .system{
+            h4{
+                color: $black-01;
+                @include font(16px,600,140%,-0.2px);
+                padding-bottom: 16px;
+            }
+            .parameters{
+                @include flex(column);
+                .parameter{
+                    @include flex(row,$gap:3px);
+                    p{
+                        color: $grey-01;
+                        @include font(14px,400,160%);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        padding: 29px 0 52px 0;
+        .title{
+            width: 75%;
+            @include font(20px);
+        }
+        .description{
+            padding: 12px 0 32px 0;
+            width: 75%;
+            @include font(14px);
+        }
+        .spesifications{
+            @include flex(row);
+            width: 95%;
+            .spesification{
+                width: 300px;
+                table{
+                    tbody{
+                        tr{
+                            th{
+                                padding: 10px;
+                            }
+                            td{
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        padding: 32px 0 52px 0;
+        .title{
+            @include font(28px);
+            width: 70%;
+        }
+        .description{
+            @include font(16px);
+            width: 70%;
+        }
+        .spesifications{
+            .spesification{
+                width: 410px;
+                h4{
+                    @include font(18px);
+                }
+                table{
+                    tbody{
+                        tr{
+                            th{
+                                @include font(16px);
+                            }
+                            td{
+                                @include font(16px);
+                            }
+                        }
+                    }
+                }
+            }
+            .inTheBox{
+                h4{
+                    @include font(18px);
+                }
+                .boxParameters{
+                    .boxParameter{
+                        p{
+                            @include font(16px);
+                        }
+                    }
+                }
+            }
+            .system{
+                h4{
+                    @include font(18px);
+                }
+                .parameters{
+                    .parameter{
+                        @include flex(row,$gap:4px);
+                        p{
+                            @include font(16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import '../../../../../assets/style/mixin.scss';
+@import '../../../../../assets/style/variables.scss';
+
+.product{
+  @include flex(row,space-between,center);
+  .productTitle {
+    color: $black-01;
+    @include font(14px,400,160%);
+  }
+  .productPrice {
+    color: $black-01;
+    text-align: right;
+    @include font(14px,400,160%);
+  }
+  @media screen and (min-width: $ipad){
+  }
+  @media screen and (min-width: $desktop){
+    .productTitle {
+      @include font(16px);
+    }
+    .productPrice {
+      @include font(16px);
+    }
+  }
+}

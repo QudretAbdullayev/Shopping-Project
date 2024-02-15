@@ -1,0 +1,172 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.paymentProduct{
+    @include flex(column,$gap:16px);
+    .paymentProductBox{
+        @include flex(row,flex-start,center);
+        padding-bottom: 24px;
+        .imgBox{
+            margin: 0 12px 0 16px;
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            background: $l-grey-02;
+            @include flex(column,center,center);
+            img{
+                padding: 9px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .paymentTitle{
+            h4{
+                color: $black-01;
+                @include font(12px,600,140%,-0.2px);
+            }
+            p{
+                color: $grey-01;
+                @include font(10px,400,160%);
+                padding: 2px 0 4px 0;
+            }
+            h5{
+                color: $dark-green-03;
+                @include font(12px,600,140%,-0.2px);
+                padding-bottom: 4px;
+            }
+        }
+    }
+    .paymentCountProduct{
+        @include flex(row,space-between,center);
+        .favorite{
+            color: $grey-01;
+            @include font(10px,400,160%);
+        }
+        .buttons{
+            @include flex(row,center,center,8px);
+            .increment,.decrement{
+                cursor: pointer;
+            }
+            .counter{
+                border-radius: 8px;
+                border: 1px solid $d-grey-01;
+                padding: 4px;
+                @include flex(row,center,center);
+                .number{
+                    color: $black-01;
+                    @include font(12px,500,160%);
+                    text-align: center;
+                    width: 24px;
+                }
+                div{
+                    @include flex(row,center,center);
+                    img{
+                        width: 24px;
+                        height: 24px
+                    }
+                }
+            }
+            .remove{
+                @include flex(row,center,center);
+                padding: 6px;
+                border-radius: 8px;
+                border: 1px solid $d-grey-01;
+                cursor: pointer;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        @include flex(row,space-between,center,auto);
+        .paymentProductBox{
+            padding-bottom: 0px;
+            .imgBox{
+                margin: 0 16px 0 24px;
+                width: 80px;
+                height: 80px;
+                img{
+                    padding: 10px;
+                }
+            }
+            .paymentTitle{
+                h4{
+                    @include font(14px);
+                }
+                p{
+                    @include font(14px);
+                    padding: 4px 0 8px 0;
+                }
+                h5{
+                    @include font(16px);
+                    padding-bottom: 0px;
+                }
+            }
+        }
+        .paymentCountProduct{
+            .favorite{
+                display: none;
+            }
+            .buttons{
+                .counter{
+                    .number{
+                        @include font(14px);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .paymentProductBox{
+            .imgBox{
+                margin: 0 24px 0 24px;
+                width: 100px;
+                height: 100px;
+                img{
+                    padding: 8px;
+                }
+            }
+            .paymentTitle{
+                h4{
+                    @include font(20px);
+                }
+                p{
+                    @include font(16px);
+                    padding: 4px 0 12px 0;
+                }
+                h5{
+                    @include font(20px);
+                }
+            }
+        }
+        .paymentCountProduct{
+            .buttons{
+                @include flex($gap:16px);
+                .counter{
+                    padding: 8px;
+                    @include flex(row,center,center,8px);
+                    .number{
+                        @include font(16px);
+                        width: 32px;
+                    }
+                    div{
+                        img{
+                            width: 28px;
+                            height: 28px;
+                        }
+                    }
+                }
+                .remove{
+                    padding: 8px;
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

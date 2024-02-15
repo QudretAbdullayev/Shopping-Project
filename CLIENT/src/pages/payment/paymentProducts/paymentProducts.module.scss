@@ -1,0 +1,91 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.paymentProductsContainer{
+    width: 100%;
+    @include flex(column,center,center);
+    .paymentProducts{
+        border-radius: 12px;
+        border: 1px solid $d-grey-01;
+        background: $white-general;
+        padding: 16px;
+        width: $container-mobile;
+        .paymentTitleContainer{
+            width: 100%;
+            @include flex(row,flex-start,center,8px);
+            padding-bottom: 24px;
+            img{
+                width: 40px;
+                height: 40px;
+                border-radius: 40px;
+                border: 1px solid $l-grey-01;
+                box-shadow: 0px 4px 10px 0px rgba(129, 139, 156, 0.07);
+            }
+            .paymentTitle{
+                h4{
+                    color: $black-01;
+                    @include font(12px,600,140%,-0.2px);
+                    padding-bottom: 4px;
+                }
+                p{
+                    color: $grey-01;
+                    @include font(10px,400,160%);
+                }
+            }
+        }
+        .paymentProductList{
+            .line{
+                width: 100%;
+                height: 1px;
+                background-color: #E4E9EE;
+                margin: 24px 0;
+                &:nth-last-child(1){
+                    display: none;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        @include flex(column,flex-start,center);
+        .paymentProducts{
+            padding: 32px 24px;
+            width: 100%;
+            .paymentTitleContainer{
+                padding-bottom: 24.5px;
+                img{
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 44px;
+                }
+                .paymentTitle{
+                    h4{
+                        @include font(14px);
+                    }
+                    p{
+                        @include font(12px);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .paymentProducts{
+           width: 100%;
+            .paymentTitleContainer{
+                img{
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 46px;
+                }
+                .paymentTitle{
+                    h4{
+                        @include font(16px);
+                    }
+                    p{
+                        @include font(14px);
+                    }
+                }
+            }
+        }
+    }
+}

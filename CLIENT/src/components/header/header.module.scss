@@ -1,0 +1,173 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+.header{
+    @include flex(column,center,center);
+    border-bottom: 1px solid $d-grey-01;
+    .container{
+        width: $container-mobile;
+        padding: 13px 0px;
+        @include flex(row,space-between,center,16px);
+        .siteLogoBox{
+            display: none;
+        }
+        .auth{
+            .user{
+                img{
+                    display: none;
+                }
+            }
+            .user{
+                cursor: pointer;
+            }
+            .hamburger{
+                cursor: pointer;
+            }
+        }
+        .searchBarContainer{
+            width: 100%;
+            position: relative;
+            .searchBar{
+                width: 100%;
+                @include flex(row,space-between,center);
+                background-color: $d-grey-02;
+                padding: 7px 12px 8px 12px;
+                border-radius: 8px;
+                border: 1px solid $d-grey-02;
+                .search{
+                    width: 100%;
+                    @include flex(row,flex-start,center,12px);
+                    select,input{
+                        border: none;
+                        background-color: $d-grey-02;
+                        @include font(12px,500,160%);
+                        outline: none;
+                    }
+                    select{
+                        color: $black-01;
+                        display: none;
+                    }
+                    input{
+                        color: $grey-01;
+                        width: 100%;
+                    }
+                    .line{
+                        display: none;
+                    }
+                }
+                img{
+                    align-self: flex-end;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .searching{
+                z-index: 22222;
+                width: 100%;
+                position: absolute;
+            }
+            .searchingHidden{
+                display: none;
+            }
+        }
+        .notificationBars{
+            @include flex(row,space-between,center,16px);
+            .notificationBar{
+                position: relative;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+                .notification{
+                    position: absolute;
+                    top: -6px;
+                    right: -6px;
+                    width: 16px;
+                    height: 16px;
+                    padding: 5px;
+                    @include flex(column,center,center,10px);
+                    border-radius: 30px;
+                    border: 1.5px solid $white-general;
+                    background: $red-1;
+                    color: $white-general;
+                    text-align: center;
+                    @include font(9px,600,100%,-0.2px);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .container{
+            width: $container-ipad;
+            padding: 19px 0px;
+            .siteLogoBox{
+                display: block;
+                padding-right: 38px;
+            }
+            .auth{
+                .user{
+                    position: relative;
+                    img{
+                        display: block;
+                        width: 38px;
+                        height: 38px;
+                    }
+                }
+                .hamburger{
+                    display: none;
+                }
+            }
+            .searchBarContainer{
+                .searchBar{
+                    .search{
+                        select,.line{
+                            display: block;
+                        }
+                    }
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+            }
+            .notificationBars{
+                .notificationBar{
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .container{
+            width: $container-desktop;
+            padding: 20px 0px;
+            .siteLogoBox{
+                padding-right: 57px;
+            }
+            .auth{
+                .user{
+                    img{
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+                
+            }
+            .searchBarContainer{
+                .searchBar{
+                    .search{
+                        select,input{
+                            @include font(14px);
+                        }
+                    }
+                }
+            }
+            .notificationBars{
+                padding-left: 52px;
+            }
+        }
+    }
+}

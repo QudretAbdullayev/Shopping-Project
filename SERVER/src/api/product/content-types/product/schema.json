@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "describe": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "isWishList": {
+      "type": "boolean",
+      "default": false
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "favorite_products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::favorite-product.favorite-product",
+      "mappedBy": "products"
+    },
+    "sold": {
+      "type": "integer",
+      "default": 0
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "slider": {
+      "type": "boolean",
+      "default": false
+    },
+    "spesifications": {
+      "type": "json"
+    },
+    "spesificationsNames": {
+      "type": "json"
+    },
+    "variantsNames": {
+      "type": "json"
+    },
+    "variants": {
+      "type": "json"
+    },
+    "variant": {
+      "type": "json"
+    }
+  }
+}

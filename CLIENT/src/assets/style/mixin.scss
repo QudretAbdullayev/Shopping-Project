@@ -1,0 +1,16 @@
+@mixin font ($size: null, $weight: null, $height: null, $spacing: null, $align: null, $transform: null){
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $spacing;
+    text-align: $align;
+    text-transform: $transform;
+}
+@mixin flex($direction: null, $justify: null, $align: null, $gap: null, $wrap: null){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap;
+}

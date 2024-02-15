@@ -1,0 +1,31 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+@import '../../../assets/style/fonts.scss';
+.antNewDesign{
+    width: 100%;
+    :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single {
+        color: $black-01;
+        font: Clash Grotesk, sans-serif;
+        @include font(12px,500,160%);
+        width: 90%;
+    }
+    :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+        padding-inline-start: 45px;
+        color: $black-01;
+        font-family: Clash Grotesk, sans-serif;
+        @include font(12px,500,160%);
+    }
+    @media screen and (min-width: $ipad) {
+        :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single {
+            @include font(14px);
+            height: 44px;
+            width: auto;
+        }
+        :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-2q8sxy).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+            padding-inline-start: 0px;
+            @include font(14px,500,160%);
+        }
+    }
+    @media screen and (min-width: $desktop) {
+    }
+}

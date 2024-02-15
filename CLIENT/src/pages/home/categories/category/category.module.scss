@@ -1,0 +1,57 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.category{
+    min-width: 120px;
+    height: 126px;
+    @include flex(column,center,center,16px);
+    border-radius: 12px;
+    border: 1.5px solid $d-grey-01;
+    .title{
+        color: $black-01;
+        text-align: center;
+        @include font(14px,600,140%,-0.2px);
+        padding-top: 8px;
+        padding-bottom: 2px;
+    }
+    .image{
+        width: 32px;
+        height: 32px;
+    }
+    .count{
+        color: $grey-01;
+        text-align: center;
+        @include font(12px,400,160%);
+    }
+    @media screen and (min-width:$ipad) {
+        min-width: 124px;
+        height: 143px;
+        flex-wrap: 24px;
+        .title{
+            padding-top: 12px;
+            @include font(16px);
+        }
+        .image{
+            width: 42px;
+            height: 42px;
+        }
+        .count{
+            @include font(14px);
+        }
+    }
+    @media screen and (min-width:$desktop) {
+        min-width: 180px;
+        height: 198px;
+        .title{
+            padding-top: 24px;
+            @include font(20px);
+        }
+        .image{
+            width: 52px;
+            height: 52px;
+        }
+        .count{
+            @include font(16px);
+        }
+    }
+}

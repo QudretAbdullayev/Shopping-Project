@@ -1,0 +1,96 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    @include flex(column,center,center);
+    .modalDialog {
+        width: $container-mobile;
+        .modalContent {
+            position: relative;
+            width: 100%;
+            padding: 40px 24px 41px 24px;
+            background-color: $white-general;
+            border-radius: 8px;
+            border: 1px solid #E4E9EE;
+            background: #FFF;
+            max-height: 80vh;
+            overflow-y: auto;
+            .modalBox{
+                @include flex(column,center,center);
+                .modalTitle {
+                    @include flex(column,center,center);
+                    img{
+                        width: 80px;
+                        height: 80px;
+                    }
+                    h3{
+                        padding: 16px 0px 12px 0;
+                        @include font(18px,600,140%,-0.2px);
+                        text-align: center;
+                    }
+                    p{
+                        @include font(14px,400,160%);
+                        color:  $grey-01;
+                        text-align: center;
+                        padding-bottom: 32px;
+                    }
+                }
+                .modalButton {
+                    width: 100%;
+                    .button{
+                        height: 48px;
+                        width: 100%;
+                        border: 1px solid $dark-green-01;
+                        border-radius: 8px;
+                        background: $dark-green-01;
+                        color: $white-general;
+                        cursor: pointer;
+                        width: 100%;
+                        padding: 11px 10px;
+                        text-align: center;
+                        @include font(14px,600,140%,-0.2px);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .modalDialog {
+            width: 440px;
+            .modalContent {
+                padding: 52px 24px 24px 24px;
+                .modalBox{
+                    .modalTitle {
+                        width: 90%;
+                        img{
+                            width: 120px;
+                            height: 120px;
+                        }
+                        h3{
+                            padding: 24px 0px 12px 0;
+                            @include font(24px);
+                        }
+                    }
+                    .modalButton {
+                        .button{
+                            @include font(16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+
+    }
+}
+  

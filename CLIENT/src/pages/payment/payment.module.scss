@@ -1,0 +1,63 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.main{
+    @include flex(column,center,center);
+    position: relative;
+    width: 100%;
+    padding-bottom: 24px;
+
+    z-index: 1;
+    .emptySection{
+        height: 220px;
+        width: 100%;
+        z-index: 2;
+        background-color: transparent;
+    }
+    .titleSection{
+        position: absolute;
+        background-color: $d-grey-03;
+        padding: 32px 0px;
+        width: 100%;
+        top: 0;
+    }
+    .otherSection{
+        z-index: 3;
+        width: 100%;
+        @include flex(column,center,center);
+        flex-wrap: wrap;
+        .paymentProducts{
+            width: 100%;
+        }
+        .productSummary{
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: $ipad){
+        padding-bottom: 80px;
+        .emptySection{
+            height: 150px;
+        }
+        .otherSection{
+            width: $container-ipad;
+            @include flex(row,space-between,flex-start);
+            .paymentProducts{
+                width: 63%;
+                }
+            .productSummary{
+                width: 35%;
+            }
+        }
+    }
+    @media screen and (min-width: $desktop){
+        .otherSection{
+            width: $container-desktop;
+            .paymentProducts{
+                width: 65%;
+                }
+            .productSummary{
+                width: 33%;
+            }
+        }
+    }
+}

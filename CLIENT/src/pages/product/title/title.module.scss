@@ -1,0 +1,32 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.title{
+    .productName{
+        color: $black-01;
+        @include font(18px,600,140%,-0.2px);
+        padding-bottom: 4px;
+    }
+    .productCount{
+        color: $grey-01;
+        @include font(12px,400,160%);
+    }
+    @media screen and (min-width: $ipad) {
+        padding-top: 0px;
+        @include flex(column,center,flex-start);
+        .productName{
+            @include font(20px);
+        }
+        .productCount{
+            @include font(14px);
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .productName{
+            @include font(24px);
+        }
+        .productCount{
+            @include font(16px);
+        }
+    }
+}

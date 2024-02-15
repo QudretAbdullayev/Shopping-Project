@@ -1,0 +1,95 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.section{
+    @include flex(column,center,center);
+    .productSection{
+        width: $container-mobile;
+    }
+    .container{
+        width: $container-mobile;
+        .tabContainer{
+            position: relative;
+            .tabs{
+                @include flex(row);
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    display: none;
+                  }
+                .tab{
+                    padding: 11px 16px;
+                    color: $grey-01;
+                    @include font(14px,500,160%);
+                    white-space: nowrap;
+                }
+                .activeTab{
+                    padding: 11px 16px;
+                    border-bottom: 2px solid $dark-green-01;
+                    color: $dark-green-01;
+                    white-space: nowrap;
+                    @include font(14px,600,140%,-0.2px);
+                }
+            }
+
+            .line{
+                background-color: $d-grey-01;
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                bottom: 0px;
+                z-index: -1;
+            }
+        }
+    }
+    .productsContainer{
+        @include flex(column,center,center);
+        .filterOption{
+            position: absolute;
+                min-height: 100vh;
+                width: 100%;
+                z-index: 1;
+                background-color: $white-general;
+                top: -60px;
+            }
+            .filterActive{
+                display: block;
+            }
+            .filterDeactive{
+                display: none;
+            }
+            .productsBox{
+                width: $container-mobile;
+                .products{
+                    padding: 32px 0;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 17px;
+                    row-gap: 24px;
+                }
+                .paginationBox{
+                    width: 100%;
+                    @include flex(column,center,center);
+                }
+            }
+    }
+    @media screen and (min-width: $ipad){
+        .productSection{
+            @include flex(row,$gap:32px);
+            width: $container-ipad;
+            padding-bottom: 52px;
+        }
+        .container{
+            width: $container-ipad;
+        }
+    }
+    @media screen and (min-width: $desktop){
+        .productSection{
+            width: $container-desktop;
+            @include flex(row,$gap:42px);
+        }
+        .container{
+            width: $container-desktop;
+        }
+    }
+}

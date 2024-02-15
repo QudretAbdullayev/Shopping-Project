@@ -1,0 +1,126 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.review{
+    .stars{
+        @include flex($gap:4px);
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .message{
+        @include font(14px,600,140%,-0.2px);
+        color: $black-01;
+        margin: 12px 0 2px 0;
+    }
+    .date{
+        @include font(12px,400,160%);
+        color: $grey-01;
+    }
+    .user{
+        margin-top: 16px;
+        @include flex(row,space-between,center);
+        .userData{
+            @include flex(row,center,center,8px);
+            img{
+                width: 24px;
+                height: 24px;
+                border-radius: 24px;
+            }
+            .name{
+                color: $black-01;
+                @include font(12px,500,160%);
+            }
+        }
+        .isLike{
+            @include flex(row,center,center,8px);
+            div{
+                cursor: pointer;
+                padding: 6px;
+                border-radius: 8px;
+                border: 1px solid $d-grey-01;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad){
+        .stars{
+            img{
+                width: 16px;
+                height: 16px;
+            }
+        }
+        .message{
+            @include font(16px);
+            margin: 16px 0 4px 0;
+        }
+        .date{
+            @include font(14px);
+        }
+        .user{
+            margin-top: 16px;
+            .userData{
+                @include flex($gap:12px);
+                img{
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 28px;
+                }
+                .name{
+                    @include font(14px);
+                }
+            }
+            .isLike{
+                @include flex($gap:12px);
+                div{
+                    padding: 12px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop){
+        .stars{
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .message{
+            @include font(18px);
+        }
+        .date{
+            @include font(16px);
+        }
+        .user{
+            margin-top: 24px;
+            .userData{
+                img{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 32px;
+                }
+                .name{
+                    color: $black-01;
+                    @include font(12px,500,160%);
+                }
+            }
+            .isLike{
+                @include flex($gap:16px);
+                div{
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

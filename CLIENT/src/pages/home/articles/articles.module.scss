@@ -1,0 +1,32 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+.section{
+    @include flex(column,center,center);
+    .container{
+        width: $container-mobile;
+        padding-top: 100px;
+        .articles{
+            padding-top: 34px;
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 24px;
+            column-gap: 24px;
+            padding-bottom: 60px;
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .container{
+            width: $container-ipad;
+            .articles{
+                grid-template-columns: 1fr 1fr 1fr;
+                padding-bottom: 80px;
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .container{
+            width: $container-desktop;
+            padding-bottom: 120px;
+        }
+    }
+}

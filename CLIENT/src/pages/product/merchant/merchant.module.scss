@@ -1,0 +1,135 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.merchant{
+    padding: 24px 0 32px 0;
+    .title{
+        width: 80%;
+        color: $black-01;
+        @include font(16px,600,140%,-0.2px);
+    }
+    .merchantBox{
+        padding-top: 16px;
+        @include flex(column, $gap:24px);
+        .merchantCard{
+            @include flex(row,$gap:16px);
+            img{
+                width: 52px;
+                height: 52px;
+                border-radius: 52px;
+                border: 2px solid $l-grey-01;
+                box-shadow: 0px 4px 60px 0px rgba(129, 139, 156, 0.12);
+            }
+            .merchantDescription{
+                h4{
+                    color: $black-01;
+                    @include font(14px,600,140%,-0.2px);
+                }
+                h6{
+                    color: $grey-01;
+                    @include font(12px,400,160%);
+                }
+                .merchantSuccesses{
+                    @include flex(row,$gap:8px);
+                    .merchantSuccess{
+                        padding: 5px 8px;
+                        border-radius: 4px;
+                        background: rgba(29, 158, 52, 0.10);
+                        color: $dark-green-03;
+                        @include font(12px,500,160%);
+                    }
+                }
+            }
+        }
+        .merchantButtons{
+            @include flex(row,flex-start,center,17px);
+            .merchantButton{
+                cursor: pointer;
+                @include flex(row,center,center,8px);
+                height: 48px;
+                background-color: transparent;
+                border-radius: 8px;
+                border: 1px $dark-green-01 solid;
+                padding: 14px 24px;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 50%;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                p{
+                    color: var(--dark-green-01, #1E4C2F);
+                    @include font(14px,600,140%,-0.2px);
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        padding: 32px 0 52px 0;
+        .title{
+            width: 75%;
+            @include font(20px);
+        }
+        .merchantBox{
+            padding-top: 24px;
+            @include flex(row,space-between,center);
+            .merchantCard{
+                img{
+                    width: 84px;
+                    height: 84px;
+                    border-radius: 84px;
+                }
+                .merchantDescription{
+                    h4{
+                        @include font(16px);
+                    }
+                    h6{
+                        @include font(14px);
+                        padding: 4px 0 12px 0;
+                    }
+                    .merchantSuccesses{
+                        .merchantSuccess{
+                            @include font(14px);
+                        }
+                    }
+                }
+            }
+            .merchantButtons{
+                @include flex(row,center,center,16px);
+                .merchantButton{
+                    height: 50px;
+                    white-space: normal;
+                    overflow: visible;
+                    width: auto;
+                    p{
+                        @include font(16px);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .merchantBox{
+            .merchantCard{
+                .merchantDescription{
+                    h4{
+                        @include font(18px);
+                    }
+                    h6{
+                        @include font(16px);
+                    }
+                }
+            }
+            .merchantButtons{
+                .merchantButton{
+                    height: 53px;
+                    p{
+                        @include font(18px);
+                    }
+                }
+            }
+        }
+    }
+}

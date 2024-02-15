@@ -1,0 +1,165 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.productSummary{
+  width: 100%;
+  border-top: 1px solid $d-grey-01;
+  @include flex(column,center,center);
+  .container {
+    padding-top: 24px;
+    @include flex(column);
+    width: $container-ipad;
+    .title {
+      color: $black-01;
+      @include font(16px,600,140%,-0.2px);
+    }
+    .noProduct {
+      color: $black-01;
+      margin-top: 24px;
+      @include font(14px,400,160%);
+    }
+    .line {
+      background-color: #e4e9ee;
+      margin: 24px 0;
+      height: 1px;
+      width: 100%;
+    }
+    .totals {
+      @include flex(column);
+      gap: 12px;     
+      .total{
+        @include flex(row,space-between,center);
+        .totalTitle {
+          color: $grey-01;
+          @include font(14px,400,160%);
+        }
+        .totalPrice {
+          color: $grey-01;
+          text-align: right;
+          @include font(14px,400,160%);
+        }
+      }
+    }
+    .allTotal {
+      @include flex(row,space-between,center);
+      .allTotalTitle {
+        color: $black-01;
+        @include font(16px,600,140%,-0.2px);
+      }
+      .allTotalPrice {
+        color: $black-01;
+        text-align: right;
+        @include font(16px,600,140%,-0.2px);
+      }
+    }
+    .promoBox {
+      border-radius: 12px;
+      border: 1px solid $d-grey-01;
+      background-color: $white-general;
+      @include flex(row,space-between,$gap:20px);
+      margin-top: 24px;
+      width: 100%;
+      padding: 11px 12px;
+      .promo {
+        @include flex(row,space-between,center,12px);
+        .discount{
+          width: 20px;
+          height: 20px;
+        }
+        .promoDescribe {
+          @include flex(column);
+          .promoApply {
+            color: $black-01;
+            @include font(14px,600,140%,-0.2px);
+          }
+          .promoUsed {
+            color: $grey-01;
+            white-space: nowrap;
+            @include font(12px,400,160%);
+          }
+        }
+      }
+      .arrow{
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .button {
+      color: $white-general;
+      @include flex(row,center,center);
+      text-align: center;
+      border-radius: 8px;
+      background-color: $dark-green-01;
+      border: 1px solid $dark-green-01;
+      cursor: pointer;
+      margin-top: 23px;
+      padding: 14px 10px;
+      @include font(14px,600,140%,-0.2px);
+    }
+  }
+  @media screen and (min-width: $ipad){
+    @include flex(column,center,flex-start);
+    border-top: none;
+    .container {
+      border-radius: 12px;
+      border: 1px solid $d-grey-01;
+      background: $white-general;
+      width: 100%;
+      padding: 24px;
+      @include flex(column);
+      .promoBox{
+        margin-top: 16px;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop){
+    .container {
+      width: 100%;
+      .title {
+        @include font(20px);
+      }
+      .totals {    
+        .total{
+          .totalTitle {
+            @include font(16px);
+          }
+          .totalPrice {
+            @include font(16px);
+          }
+        }
+      }
+      .allTotal {
+        .allTotalTitle {
+          @include font(20px);
+        }
+        .allTotalPrice {
+          @include font(20px);
+        }
+      }
+      .promoBox {
+        padding: 19px 16px;
+        .promo {
+          .discount{
+            width: 24px;
+            height: 24px;
+          }
+          .promoDescribe {
+            .promoApply {
+              @include font(16px);
+            }
+            .promoUsed {
+
+              @include font(16px);
+            }
+          }
+        }
+      }
+      .button {
+        margin-top: 32px;
+        @include font(16px);
+      }
+    }
+  }
+}
+
+  

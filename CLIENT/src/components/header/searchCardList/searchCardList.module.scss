@@ -1,0 +1,16 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+.productsList{
+  @include flex(column, $gap:5px);
+  padding: 4px 0;
+  outline: 2px solid $dark-green-03;
+  border-radius: 8px;
+  max-height: 75vh;
+  background-color: $d-grey-02;
+  margin-top: 15px;
+  overflow-y: auto;
+    @media screen and (min-width: $ipad) {
+    }
+    @media screen and (min-width: $desktop) {
+    }
+}

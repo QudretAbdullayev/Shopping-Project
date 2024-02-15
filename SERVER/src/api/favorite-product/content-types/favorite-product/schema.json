@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favorite_products",
+  "info": {
+    "singularName": "favorite-product",
+    "pluralName": "favorite-products",
+    "displayName": "Favorite-product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "favorite_products"
+    }
+  }
+}

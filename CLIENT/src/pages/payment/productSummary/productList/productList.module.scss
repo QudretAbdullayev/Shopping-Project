@@ -1,0 +1,12 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.products {
+  @include flex(column,center,space-between,12px);
+  padding-top: 24px;
+  @media screen and (min-width: $ipad){
+  }
+  @media screen and (min-width: $desktop){
+    @include flex($gap:16px);
+  }
+}

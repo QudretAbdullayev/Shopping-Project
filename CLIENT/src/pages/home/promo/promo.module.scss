@@ -1,0 +1,142 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.section{
+    @include flex(column,center,center);
+    .container{
+        @include flex(column,center,center);
+        background-color: $orange-3;
+        border-radius: 16px;
+        padding: 32px 0 21px 0;
+        width: $container-mobile;
+        .promoImage{
+            width: 85%;
+            .box{
+                @include flex(column,center,flex-start);
+                img{
+                    width: 157px;
+                    height: 176px;
+                    object-fit: cover;
+                }
+            }
+        }
+        .promoContainer{
+            width: 85%;
+            .box{
+                .title{
+                    @include font(18px,600,140%,-0,2px);
+                    color: $black-01;
+                    padding-top: 32px;
+                }
+                .description{
+                    padding-top: 12px;
+                    @include font(14px,400,160%);
+                    color: $grey-01;
+                }
+                .buttons{
+                    padding-top: 32px;
+                    @include flex(row,center,center,16px);
+                    
+                    button{
+                        width: 100%;
+                        padding: 12px 0;
+                        border-radius: 8px;
+                        @include font(14px,600,140%,-0,2px);
+                        text-align: center;
+                    }
+                    .buy{
+                        background: $dark-green-01;
+                        border: 1px solid $dark-green-01;
+                        color: $white-general;
+                    }
+                    .view{
+                        border: 1px solid $dark-green-01;
+                        color: $dark-green-01;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .container{
+            @include flex(row,center,center,50px);
+            height: 341px;
+            padding: 0;
+            width: $container-ipad;
+            .promoContainer{
+                width: 50%;
+                .box{
+                    width: 85%;
+                    .title{
+                        padding-top: 0px;
+                        @include font(28px);
+                    }
+                    .description{
+                        padding-top: 16px;
+                        @include font(18px);
+                    }
+                    .buttons{
+                        padding-top: 32px;
+                        button{
+                            padding: 11px 0;
+                            @include font(16px);
+                        }
+                    }
+                }
+            }
+            .promoImage{
+                width: 50%;
+                @include flex(column,center,center);
+                .box{
+                    @include flex(column,flex-end,center);
+                    width: 60%;
+                    img{
+                        width: auto;
+                        height: 363px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        padding-top: 80px;
+        .container{
+            @include flex(row,center,center,50px);
+            height: 400px;
+            padding: 0;
+            width: $container-desktop;
+            .promoContainer{
+                width: 50%;
+                .box{
+                    width: 85%;
+                    .title{
+                        @include font(38px);
+                    }
+                    .description{
+                        @include font(18px);
+                    }
+                    .buttons{
+                        width: 80%;
+                        button{
+                            padding: 14px 0;
+                            @include font(18px);
+                        }
+                    }
+                }
+            }
+            .promoImage{
+                width: 50%;
+                @include flex(column,center,center);
+                .box{
+                    @include flex(column,flex-end,center);
+                    width: 60%;
+                    img{
+                        height: 430px;
+                    }
+                }
+            }
+        }
+    }
+}

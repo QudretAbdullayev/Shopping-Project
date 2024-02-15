@@ -1,0 +1,52 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.section{
+    @include flex(column,center,center);
+    .container{
+        padding-top: 60px; 
+        @include flex(column,center,space-between);
+        width: $container-mobile;
+        .categories{
+            padding: 34px 0px 0px 0px;
+            @include flex(row,flex-start,center,16px);
+            overflow-x: scroll;
+        }
+        ::-webkit-scrollbar {
+            width: 1px;
+            height: 0px;
+          }
+        ::-webkit-scrollbar-track {
+            background: $d-grey-01; /* Track color */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: $dark-green-01; /* Thumb color */
+            border-radius: 30px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: $d-grey-01; /* Thumb color on hover */
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .container{
+            width: $container-ipad;
+            .categories{
+                padding: 32px 0px;
+            }
+            ::-webkit-scrollbar {
+                height: 4px;
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .container{
+            width: $container-desktop;
+            .categories{
+                padding: 52px 0px;
+            }
+            ::-webkit-scrollbar {
+                height: 6px;
+            }
+        }
+    }
+}

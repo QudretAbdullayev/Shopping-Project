@@ -1,0 +1,106 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.main{
+    position: relative;
+    .section{
+        @include flex(column,center,center);
+        .container{
+            width: $container-mobile;
+            @include flex(column,flex-start,space-between);
+            flex-wrap: wrap;
+        }
+    }
+    .productsSection{
+        padding-bottom: 60px;
+        .productsContainer{
+            @include flex(column,center,center);
+            .filterOption{
+                position: absolute;
+                min-height: 100vh;
+                width: 100%;
+                z-index: 100;
+                background-color: $white-general;
+                top: -60px;
+            }
+            .filterActive{
+                display: block;
+            }
+            .filterDeactive{
+                display: none;
+            }
+            .productsBox{
+                width: $container-mobile;
+                .products{
+                    padding: 32px 0;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 17px;
+                    row-gap: 24px;
+                }
+                .paginationBox{
+                    width: 100%;
+                    @include flex(column,center,center);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        position: static;
+        .section{
+            .container{
+                padding-bottom: 52px;
+                width: $container-ipad;
+                @include flex(row,space-between,center);
+            }
+        }
+        .productsSection{
+            width: 100%;
+            padding-bottom: 80px;
+            @include flex(column,center,center);
+            .productsContainer{
+                width: $container-ipad;
+                @include flex(row,flex-start,flex-start,32px);
+                .filterOption{
+                    border-radius: 12px;
+                    outline: 1px solid $d-grey-01;
+                    background: $white-general;
+                    position: static;
+                    min-height: inherit;
+                    width: 30%;
+                    z-index: 0;
+                    background-color: transparent;
+                    top: 0;
+                }
+                .filterActive{
+                    display: block;
+                }
+                .filterDeactive{
+                    display: block;
+                }
+                .productsBox{
+                    width: 100%;
+                    @include flex(column,center,space-between);
+                    height: 100%;
+                    .products{
+                        padding: 0px 0px 32px 0px;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        column-gap: 17px;
+                        row-gap: 24px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .section{
+            .container{
+                width: $container-desktop;
+            }
+        }
+        .productsSection{
+            padding-bottom: 120px;
+        }
+    }
+}

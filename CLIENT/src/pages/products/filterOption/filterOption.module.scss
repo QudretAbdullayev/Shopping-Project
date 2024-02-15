@@ -1,0 +1,86 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.optionContainer{
+    width: 100%;
+    @include flex(column,flex-start,flex-start);
+    .filterOption{
+        width: 100%;
+        padding: 24px 16px 0px 16px;
+        background-color: $white-general;
+        
+        .filterTitle{
+            @include flex(row,space-between,center);
+            padding-bottom: 24px;
+            h4{
+                @include font(18px,600,140%,-0.2px);
+            }
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .category{
+            @include flex(column,center,space-between);
+            border-top: 1px solid $d-grey-01;
+            padding: 24px 0;
+            .title{
+                @include flex(row,space-between,center);
+                padding-bottom: 14px;
+                h2{
+                    color: $black-01;
+                    @include font(16px,600,140%,-0.2px);
+                }
+                img{
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+            cursor: pointer;
+            .subcategories{
+                @include flex(column,center,flex-start,14px);
+                .subcategory{
+                    @include flex($gap: 8px)
+                }
+            }
+            .priceCategories{
+                @include flex(column,center,flex-start,10px);
+                .input{
+                    @include flex(row,flex-start,center,10px);
+                }
+                .priceBoxs{
+                    @include flex(column,center,flex-start,10px);
+                    .priceBox{
+                        width: fit-content;
+                        border-radius: 12px;
+                        border: 1px solid $d-grey-01;
+                        padding: 11px 16px;
+                        color: $black-01;
+                        @include font(14px,400,160%);
+                    }
+                }
+                .subcategory{
+                    @include flex($gap: 8px)
+                }
+            }
+        }
+    }
+    @media screen and (min-width:$ipad) {
+        .filterOption{
+            .filterTitle{
+                img{
+                    display: none;
+                }
+            }
+        }
+    }
+    @media screen and (min-width:$ipad) {
+        .filterOption{
+            .filterTitle{
+                h4{
+                    @include font(20px);
+                }
+            }
+        }
+    }
+}

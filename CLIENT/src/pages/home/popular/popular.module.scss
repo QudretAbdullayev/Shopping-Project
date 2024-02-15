@@ -1,0 +1,87 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+
+.section{
+    @include flex(column,center,center);
+    padding: 100px 0;
+    .container{
+        width: $container-mobile;
+        .title{
+            color: $black-01;
+            text-align: center;
+            @include font(18px,600,140%,-0.2px);
+        }
+        .description{
+            color: $grey-01;
+            text-align: center;
+            @include font(14px,400,160%);
+            padding: 12px 0 29px 0;
+        }
+        .products{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 17px;
+            row-gap: 24px;
+        }
+        .buttonBox{
+            width: 100%;
+            padding-top: 32px;
+            @include flex(column,center,center);
+            .button{
+                cursor: pointer;
+                background-color: $white-general;
+                padding: 14px 32px;
+                border-radius: 8px;
+                border: 1px solid $dark-green-01;
+                color: var(--dark-green-01, #1E4C2F);
+                @include font(14px,600,140%,-0.2px);
+                text-align: center;
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        padding: 80px 0;
+        .container{
+            width: $container-ipad;
+            .title{
+                @include font(28px);
+            }
+            .description{
+                @include font(16px);
+                padding: 16px 0 52px 0;
+            }
+            .products{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .buttonBox{
+                padding-top: 52px;
+                .button{
+                    padding: 11px 10px;
+                    width: 160px;
+                    @include font(16px);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        padding: 100px 0 80px 0;
+        .container{
+            width: $container-desktop;
+            .title{
+                @include font(38px);
+            }
+            .description{
+                @include font(18px);
+            }
+            .products{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            .buttonBox{
+                .button{
+                    padding: 14px 10px;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

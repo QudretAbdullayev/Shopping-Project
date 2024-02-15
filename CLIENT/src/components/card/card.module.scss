@@ -1,0 +1,143 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variables.scss';
+
+.card{
+    background: var(--white-general, #FFF);
+    transition: 1s;
+    &:hover{
+        border-radius: 8px;
+        transform: scale(1.05);
+        z-index: 2;
+    }
+    .image{
+        border-radius: 8px;
+        background: $l-grey-02;
+        width: 100%;
+        height: 130px;
+        @include flex(column,center,center);
+        .imageBox{
+            width: 90%;
+            height: 90%;
+            margin: 14px 0;
+            position: relative;
+            @include flex(column,center,center);
+            .box{
+                width: 32px;
+                height: 32px;
+                background-color: $white-general;
+                border: 1px solid $white-general;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                @include flex(column,center,center);
+                .heart{
+                    text-align: center;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .productBox{
+                height: 90%;
+                width: 90%;
+                .product{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    .description{
+        width: 100%;
+        padding: 23px 0 20px 0;
+        @include flex(column,flex-start,center);
+        .descriptionBox{
+            width: 100%;
+            .titlePrice{
+                @include flex(row,space-between,center,12px);
+                @include font(14px,600,140%,-0,2px);
+                h4{
+                    width: 100%;
+                    color: $black-01;
+                }
+                .price{
+                    color: $dark-green-03;
+                }
+            }
+            h5{
+                color: $grey-01;
+                @include font(12px,400,160%);
+            }
+            .rating{
+                padding-top: 4.5px;
+                @include flex(row,flex-start,center,4px);
+                h6{
+                    color: $black-01;
+                    @include font(12px,400,160%);
+                }
+                .star{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        .image{
+            height: 190px;
+            .imageBox{
+                .box{
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
+        .description{
+            padding: 12px 0 0px 0;
+            .descriptionBox{
+                .titlePrice{
+                    @include flex($gap:16px);
+                    @include font(16px);
+                }
+                h5{
+                    @include font(14px);
+                }
+                .rating{
+                    padding-top: 8px;
+                    @include flex($gap:8px);
+                    h6{
+                        @include font(14px);
+                    }
+                    .star{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        .image{
+            height: 280px;
+        }
+        .description{
+            padding: 16px 0px 0px 0px;
+            .descriptionBox{
+                .titlePrice{
+                    @include flex($gap:16px);
+                    @include font(20px);
+                }
+                h5{
+                    @include font(16px);
+                }
+                .rating{
+                    padding-top: 9px;
+                    h6{
+                        @include font(16px);
+                    }
+                }
+            }
+        }
+    }
+}

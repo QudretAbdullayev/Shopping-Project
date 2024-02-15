@@ -1,0 +1,168 @@
+@import '../../../assets/style/mixin.scss';
+@import '../../../assets/style/variables.scss';
+.section{
+    @include flex(column,center,center);
+    background: $d-grey-03;
+    .container{
+        padding-top: 52px;
+        @include flex(column,center,center);
+        .heroContainer{
+            width: $container-mobile;
+            background-color: transparent;
+            .title{
+                @include font(28px,600,140%,-0,2px);
+                color: $black-01;
+            }
+            .description{
+                padding-top: 16px;
+                @include font(14px,400,160%);
+                color: $grey-01;
+            }
+            .buttons{
+                padding-top: 32px;
+                @include flex(column,center,center,16px);
+                
+                button{
+                    width: 100%;
+                    padding: 14px 0;
+                    border-radius: 8px;
+                    @include font(14px,600,140%,-0,2px);
+                    text-align: center;
+                }
+                .buy{
+                    background: $dark-green-01;
+                    border: 1px solid $dark-green-01;
+                    color: $white-general;
+                }
+                .view{
+                    border: 1px solid $dark-green-01;
+                    color: $dark-green-01;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .heroImage{
+        position: relative;
+        .background{
+            min-height: 384px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .rectangle{
+            @include flex(column,flex-start,flex-start);
+            position: absolute;
+            left: 25%;
+            top: 18%;
+            .rectangleBox{
+                width: 40%;
+                @include flex(column,center,center,4px);
+                .lines{
+                    @include flex(column,center,center,2px);
+                    .line{
+                        width: 2px;
+                        height: 4px;
+                        border-radius: 20px;
+                        background: $white-general;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad) {
+        min-height: 436px;
+        @include flex(row,center,space-between);
+        .container{
+            width: 42%;
+            padding-top: 0px;
+            @include flex(column,center,flex-end);
+            .heroContainer{
+                width: $container-ipad;
+                .title{
+                    @include font(34px,600,120%);
+                    background-color: transparent;
+                    position: relative;
+                    z-index: 1;
+                    width: 110%;
+                }
+                .description{
+                    @include font(16px);
+                    position: relative;
+                    background-color: transparent;
+                    z-index: 1;
+                    width: 110%;
+                }
+                .buttons{
+                    @include flex(row,center,center);
+                    button{
+                        @include font(16px);
+                    }
+                }
+            }
+        }
+        .heroImage{
+            width: 58%;
+            position: relative;
+            .background{
+                min-height: 436px;
+                object-fit: cover;
+            }
+            .rectangle{
+                @include flex(column,flex-start,flex-start);
+                position: absolute;
+                left: 30%;
+                top: 18%;
+                .rectangleBox{
+                    width: 40%;
+                    @include flex(column,center,center,4px);
+                    .rectangleImage{
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .lines{
+                        @include flex(column,center,center,2px);
+                        .line{
+                            width: 2px;
+                            height: 4px;
+                            border-radius: 20px;
+                            background: $white-general;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        min-height: 620px;
+        @include flex(row,center,space-between);
+        .container{
+            width: 42%;
+            padding-top: 0px;
+            @include flex(column,center,flex-end);
+            .heroContainer{
+                width: $container-desktop;
+                .title{
+                    @include font(58px);
+                    width: 135%;
+                }
+                .description{
+                    @include font(18px);
+                    width: 120%;
+                }
+                .buttons{
+                    @include flex(row,flex-start,center);
+                    button{
+                        @include font(18px);
+                        width: 30%;
+                    }
+                }
+            }
+        }
+        .heroImage{
+            width: 58%;
+            .background{
+                min-height: 620px;
+            }
+        }
+    }
+}

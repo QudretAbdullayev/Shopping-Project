@@ -1,0 +1,72 @@
+@import '../../../../assets/style/mixin.scss';
+@import '../../../../assets/style/variables.scss';
+
+.commentContainer{
+    margin-top: 24px;
+    p{
+        @include font(16px,600,140%,-0.2px);
+        color: $black-01;
+        margin-bottom: 16px;
+    }
+    .comment{
+        border-radius: 12px;
+        border: 1px solid $d-grey-01;
+        padding: 16px;
+        form{
+            width: 100%;
+            @include flex(column,center,flex-start,8px);
+            .formBox{
+                width: 100%;
+                @include flex(column,center,flex-start,8px);
+                textarea{
+                    width: 100%;
+                    border: 1px solid $d-grey-01;
+                    outline: 1px solid $dark-green-01;
+                    border-radius: 8px;
+                    @include font(14px,500,160%);
+                    color: $black-01;
+                }
+                label{
+                    @include font(14px,600,140%,-0.2px);
+                    color: $black-01;
+                }
+                button{
+                    @include flex(row,center,center);
+                    padding: 14px 10px;
+                    border-radius: 8px;
+                    background: $dark-green-01;
+                    width: 100%;
+                    border: 1px solid $dark-green-01;
+                    color: $white-general;
+                    @include font(14px,600,140%,-0.2px);
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $ipad){
+        margin-top: 32px;
+        p{
+            @include font(20px);
+        }
+        .comment{
+            form{
+                width: 100%;
+                @include flex(row,center,flex-start,16px);
+                .formBox{
+                    width: 100%;
+                    @include flex(column,center,space-between,16px);
+                    textarea{
+                        @include font(16px);
+                    }
+                    label{
+                        @include font(16px);
+                    }
+                    button{
+                        width: 35%;
+                        @include font(16px);
+                    }
+                }
+            }
+        }
+    }
+}
